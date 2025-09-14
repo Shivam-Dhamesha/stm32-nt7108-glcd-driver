@@ -1,0 +1,22 @@
+
+---
+
+## 🔑 STM32 HAL Integration Guide
+1. **Enable GPIO Ports** (B and D in your case) in **CubeMX**.  
+   - PB0–PB5 as outputs (control pins).  
+   - PD0–PD7 as outputs (8-bit data bus).  
+
+2. **Connect Power/Contrast**:  
+   - VDD = +5V, VSS = GND  
+   - VEE = negative bias output (already on module, just connect to VO via pot).  
+   - RST = PB5  
+
+3. **Backlight**: use a series resistor (~47–100 Ω) if powering from 3.3V.  
+
+4. **Include `glcd.c/h`** in `Core/Src` and `Core/Inc`.  
+
+5. Call in `main.c`:  
+   ```c
+   GLCD_Init();
+   GLCD_Clear();
+   GLCD_DisplayString("STM32 + NT7108", 0, 0);
