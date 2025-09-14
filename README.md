@@ -13,6 +13,7 @@ This driver provides a complete set of functions for initializing the display, r
 
 
 The demo application showcases a simple H.V.A.C. monitoring interface, displaying static temperature and humidity data alongside custom icons.
+![Demo of the STM32 GLCD Driver in action](demo.jpeg)
 
 ---
 
@@ -105,3 +106,4 @@ The driver is configured with the following pin connections. You can modify thes
 ## ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
